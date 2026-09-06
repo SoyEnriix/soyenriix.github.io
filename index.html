@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SoyEnriix — Enrique Cerda Arias</title>
+  <meta name="description" content="Página oficial de SoyEnriix, Enrique Cerda Arias, creador de contenido de Santiago de Chile y creador de Enriix Beatz.">
+  <meta name="author" content="Enrique Cerda Arias">
+  <meta name="theme-color" content="#090909">
+
+  <meta property="og:title" content="SoyEnriix — Enrique Cerda Arias">
+  <meta property="og:description" content="SoyEnriix — contenido, videos, streaming y Enriix Beatz.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/mea-guata-cover.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #080808;
+      --black-2: #101010;
+      --white: #f7f7f4;
+      --soft: #cfcfca;
+      --yellow: #f3d33b;
+      --red: #ef3340;
+      --glass: rgba(255,255,255,.075);
+      --glass-border: rgba(255,255,255,.13);
+      --shadow: 0 25px 80px rgba(0,0,0,.38);
+      --radius: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    audio {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -5;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(243,211,59,.09), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(239,51,64,.06), transparent 30%),
+        #080808;
+    }
+
+    .ambient::before,
+    .ambient::after {
+      content: "";
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .16;
+      animation: float 13s ease-in-out infinite alternate;
+    }
+
+    .ambient::before {
+      background: var(--yellow);
+      left: -18vw;
+      top: 5vh;
+    }
+
+    .ambient::after {
+      background: var(--red);
+      right: -20vw;
+      bottom: 0;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(5vw,-3vh,0) scale(1.12); }
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .035;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(94%, 1100px);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px 12px 20px;
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      background: rgba(10,10,10,.58);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 15px 50px rgba(0,0,0,.25);
+    }
+
+    .nav-logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.05em;
+      font-size: 1.05rem;
+    }
+
+    .nav-logo span {
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+      transition: .3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255,255,255,.08);
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 18px var(--yellow);
+      margin-right: 3px;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .section {
+      position: relative;
+      width: min(1200px, 92%);
+      margin: auto;
+      padding: 130px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #aaa;
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      width: min(1350px, 94%);
+      margin: auto;
+      padding: 150px 0 80px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-kicker {
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(4.5rem, 11vw, 10.5rem);
+      line-height: .78;
+      letter-spacing: -.09em;
+      font-weight: 700;
+      max-width: 900px;
+    }
+
+    .hero-title .white {
+      color: var(--white);
+    }
+
+    .hero-title .yellow {
+      color: var(--yellow);
+      text-shadow: 0 0 45px rgba(243,211,59,.14);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #b8b8b4;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      line-height: 1.7;
+      margin-top: 42px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 17px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.055);
+      backdrop-filter: blur(15px);
+      color: #ddd;
+      font-size: .82rem;
+      font-weight: 600;
+      transition: .3s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-3px);
+      border-color: rgba(243,211,59,.5);
+      color: #fff;
+      background: rgba(243,211,59,.08);
+    }
+
+    .pill .mini-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glass-orb {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.24), transparent 22%),
+        linear-gradient(145deg, rgba(243,211,59,.17), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow:
+        inset 0 0 60px rgba(255,255,255,.035),
+        0 35px 100px rgba(0,0,0,.5);
+      backdrop-filter: blur(20px);
+      animation: orb 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes orb {
+      from { transform: translateY(12px) rotate(-3deg); }
+      to { transform: translateY(-18px) rotate(5deg); }
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 18px 20px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card.one {
+      top: 8%;
+      right: 4%;
+      transform: rotate(5deg);
+    }
+
+    .floating-card.two {
+      bottom: 8%;
+      left: 2%;
+      transform: rotate(-6deg);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 1.8rem;
+      font-family: "Space Grotesk";
+    }
+
+    .floating-card small {
+      color: #aaa;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 35px;
+      left: 0;
+      color: #777;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      writing-mode: vertical-rl;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3rem, 7vw, 7rem);
+      line-height: .88;
+      letter-spacing: -.075em;
+    }
+
+    .section-title .accent {
+      color: var(--yellow);
+    }
+
+    .about-text {
+      color: #c3c3be;
+      font-size: 1.1rem;
+      line-height: 1.85;
+    }
+
+    .about-text p + p {
+      margin-top: 22px;
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 35px;
+    }
+
+    .fact {
+      border: 1px solid rgba(255,255,255,.11);
+      padding: 11px 14px;
+      border-radius: 999px;
+      color: #bbb;
+      font-size: .78rem;
+      background: rgba(255,255,255,.035);
+    }
+
+    /* =========================
+       BACKGROUND TIMELINE
+    ========================= */
+
+    .timeline {
+      margin-top: 90px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 30px;
+      padding: 35px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .timeline-year {
+      color: var(--yellow);
+      font-family: "Space Grotesk";
+      font-weight: 700;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: #999;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    /* =========================
+       VIDEOS
+    ========================= */
+
+    .videos-section {
+      padding-top: 70px;
+    }
+
+    .videos-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .videos-header p {
+      max-width: 450px;
+      color: #92928e;
+      line-height: 1.7;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.045);
+      min-height: 350px;
+      box-shadow: var(--shadow);
+      transition: .45s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(243,211,59,.3);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      display: block;
+    }
+
+    .video-placeholder {
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 35px;
+      background:
+        radial-gradient(circle at center, rgba(243,211,59,.09), transparent 50%),
+        rgba(255,255,255,.025);
+    }
+
+    .video-placeholder .number {
+      font-size: 5rem;
+      font-family: "Space Grotesk";
+      color: rgba(255,255,255,.09);
+      font-weight: 700;
+    }
+
+    .video-placeholder h3 {
+      margin-top: -5px;
+      font-size: 1.2rem;
+    }
+
+    .video-placeholder p {
+      color: #777;
+      margin-top: 8px;
+      font-size: .85rem;
+    }
+
+    .channel-link {
+      display: inline-flex;
+      margin-top: 35px;
+      color: var(--yellow);
+      font-weight: 700;
+      font-size: .85rem;
+    }
+
+    /* =========================
+       MUSIC INTRO
+    ========================= */
+
+    .music-wrap {
+      position: relative;
+      margin-top: 130px;
+      padding: 120px 0 0;
+      overflow: hidden;
+    }
+
+    .music-wrap::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 90vw;
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, rgba(239,51,64,.7), transparent);
+    }
+
+    .music-intro {
+      width: min(1200px, 92%);
+      margin: auto;
+      position: relative;
+    }
+
+    .music-title {
+      font-family: "Space Grotesk";
+      font-size: clamp(4rem, 11vw, 11rem);
+      line-height: .78;
+      letter-spacing: -.1em;
+      max-width: 1100px;
+    }
+
+    .music-title .red {
+      color: var(--red);
+      text-shadow: 0 0 60px rgba(239,51,64,.13);
+    }
+
+    .music-description {
+      max-width: 650px;
+      color: #aaa;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-top: 45px;
+    }
+
+    .music-link {
+      display: inline-flex;
+      margin-top: 28px;
+      padding: 12px 18px;
+      border: 1px solid rgba(239,51,64,.35);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(239,51,64,.08);
+      transition: .3s;
+    }
+
+    .music-link:hover {
+      background: rgba(239,51,64,.17);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       SONG
+    ========================= */
+
+    .song-section {
+      width: min(1250px, 94%);
+      margin: 110px auto 0;
+    }
+
+    .song-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+      padding: 45px;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,.11);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.065), rgba(255,255,255,.015));
+      box-shadow: 0 40px 120px rgba(0,0,0,.5);
+      overflow: hidden;
+      backdrop-filter: blur(25px);
+    }
+
+    .song-card::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(239,51,64,.12);
+      filter: blur(100px);
+      right: -150px;
+      bottom: -180px;
+      pointer-events: none;
+    }
+
+    .cover-wrap {
+      position: relative;
+      z-index: 2;
+      perspective: 1000px;
+    }
+
+    .cover {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      box-shadow:
+        0 35px 80px rgba(0,0,0,.6),
+        0 0 0 1px rgba(255,255,255,.12);
+      transform: rotate(-2deg);
+      transition: transform .6s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .cover-wrap:hover .cover {
+      transform: rotate(0deg) scale(1.025);
+    }
+
+    .cover-glass {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 30px;
+      right: -20px;
+      bottom: 20px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(18px);
+      transform: rotate(10deg);
+    }
+
+    .song-label {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .song-title {
+      font-family: "Space Grotesk";
+      font-size: clamp(4rem, 8vw, 8rem);
+      letter-spacing: -.09em;
+      line-height: .78;
+    }
+
+    .song-subtitle {
+      color: #aaa;
+      margin-top: 25px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    /* =========================
+       AUDIO PLAYER
+    ========================= */
+
+    .audio-player {
+      margin-top: 35px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(0,0,0,.28);
+    }
+
+    .audio-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 13px;
+      gap: 15px;
+    }
+
+    .audio-title {
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .audio-status {
+      color: #777;
+      font-size: .7rem;
+    }
+
+    audio {
+      width: 100%;
+      height: 42px;
+      filter: invert(1) grayscale(1);
+    }
+
+    .audio-note {
+      color: #686868;
+      font-size: .68rem;
+      margin-top: 9px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       LYRICS
+    ========================= */
+
+    .lyrics {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 70px;
+    }
+
+    .lyrics-title {
+      font-family: "Space Grotesk";
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: .85;
+      letter-spacing: -.08em;
+    }
+
+    .lyrics-title span {
+      color: var(--red);
+    }
+
+    .lyrics-content {
+      border-left: 1px solid rgba(255,255,255,.1);
+      padding-left: 45px;
+      color: #aaa;
+      line-height: 2;
+      white-space: pre-line;
+      min-height: 300px;
+    }
+
+    .lyrics-placeholder {
+      color: #555;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       PLATFORMS
+    ========================= */
+
+    .platforms {
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .platform {
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.04);
+      color: #aaa;
+      font-size: .8rem;
+      transition: .3s;
+    }
+
+    .platform:hover {
+      color: #fff;
+      border-color: rgba(239,51,64,.45);
+      transform: translateY(-3px);
+    }
+
+    .platform.youtube {
+      color: #fff;
+      border-color: rgba(239,51,64,.4);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      width: min(1200px, 92%);
+      margin: 120px auto 0;
+      padding: 35px 0 45px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      color: #686868;
+      font-size: .75rem;
+    }
+
+    .footer-name {
+      color: #aaa;
+      font-family: "Space Grotesk";
+      font-weight: 700;
+    }
+
+    /* =========================
+       CURSOR
+    ========================= */
+
+    .cursor-glow {
+      position: fixed;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(243,211,59,.08), transparent 65%);
+      transform: translate(-50%, -50%);
+      transition: left .18s ease-out, top .18s ease-out;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 140px;
+      }
+
+      .hero-visual {
+        min-height: 380px;
+      }
+
+      .glass-orb {
+        width: 300px;
+        height: 300px;
+      }
+
+      .about-grid,
+      .song-card,
+      .lyrics {
+        grid-template-columns: 1fr;
+      }
+
+      .song-card {
+        padding: 25px;
+        gap: 45px;
+      }
+
+      .lyrics-content {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.1);
+        padding-left: 0;
+        padding-top: 35px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        top: 10px;
+        width: 94%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .hero {
+        width: 90%;
+        min-height: 100svh;
+      }
+
+      .hero-title {
+        font-size: clamp(4rem, 19vw, 7rem);
+      }
+
+      .hero-description {
+        margin-top: 28px;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+
+      .glass-orb {
+        width: 240px;
+        height: 240px;
+      }
+
+      .floating-card {
+        padding: 12px 14px;
+      }
+
+      .floating-card strong {
+        font-size: 1.3rem;
+      }
+
+      .about-grid {
+        gap: 40px;
+      }
+
+      .timeline-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-card,
+      .video-card iframe,
+      .video-placeholder {
+        min-height: 250px;
+        height: 250px;
+      }
+
+      .song-card {
+        border-radius: 28px;
+      }
+
+      .song-title {
+        font-size: 4.2rem;
+      }
+
+      .cover {
+        border-radius: 18px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient"></div>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#inicio" class="nav-logo">Soy<span>Enriix</span></a>
+
+    <div class="nav-links">
+      <a href="#quien-soy">Quién soy</a>
+      <a href="#videos">Videos</a>
+      <a href="#enriix-beatz">Enriix Beatz</a>
+      <a href="#mea-guata">MEA GUATA</a>
+    </div>
+
+    <span class="nav-dot"></span>
+  </nav>
+
+
+  <!-- HERO -->
+  <main id="inicio">
+
+    <section class="hero">
+
+      <div class="hero-copy reveal">
+
+        <div class="hero-kicker">
+          Santiago de Chile · Desde 2021
+        </div>
+
+        <h1 class="hero-title">
+          <span class="white">SOY</span><br>
+          <span class="yellow">ENRIIX</span>
+        </h1>
+
+        <p class="hero-description">
+          Soy Enriix. Mi nombre es <strong>Enrique Cerda Arias</strong> y en
+          internet me conocen como <strong>SoyEnriix</strong>. Tengo 15 años,
+          nací en Santiago de Chile y desde aproximadamente 2021 he estado
+          creando contenido principalmente en YouTube.
+        </p>
+
+        <div class="hero-actions">
+          <a class="pill" href="https://www.youtube.com/@SoyEnriix" target="_blank" rel="noopener">
+            <span class="mini-dot"></span>
+            YouTube
+          </a>
+
+          <a class="pill" href="#videos">
+            Ver videos
+          </a>
+
+          <a class="pill" href="#enriix-beatz">
+            Enriix Beatz
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual reveal">
+
+        <div class="glass-orb"></div>
+
+        <div class="floating-card one">
+          <small>Nombre</small>
+          <strong>Enrique</strong>
+        </div>
+
+        <div class="floating-card two">
+          <small>Proyecto</small>
+          <strong>MEA GUATA</strong>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll">
+        Scroll ↓
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="quien-soy">
+
+      <div class="about-grid">
+
+        <div class="reveal">
+          <div class="eyebrow">01 / Quién soy</div>
+
+          <h2 class="section-title">
+            QUIÉN<br>
+            <span class="accent">SOYENRIIX</span>
+          </h2>
+        </div>
+
+        <div class="about-text reveal">
+
+          <p>
+            SoyEnriix es el nombre con el que publico mi contenido en internet.
+            Mi nombre real es Enrique Cerda Arias y vivo en Santiago de Chile.
+          </p>
+
+          <p>
+            Empecé a crear contenido aproximadamente en 2021, principalmente
+            en YouTube. Mi contenido está relacionado con entretenimiento,
+            videos y streaming. Los videojuegos también forman parte de lo que
+            hago, entre ellos Minecraft y Fortnite.
+          </p>
+
+          <p>
+            Actualmente también estoy empezando un proyecto musical:
+            <strong>Enriix Beatz</strong>.
+          </p>
+
+          <div class="facts">
+            <span class="fact">Enrique Cerda Arias</span>
+            <span class="fact">SoyEnriix</span>
+            <span class="fact">Santiago de Chile</span>
+            <span class="fact">YouTube</span>
+            <span class="fact">TikTok</span>
+            <span class="fact">Kick</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ANTECEDENTES -->
+      <div class="timeline reveal">
+
+        <div class="timeline-row">
+          <div class="timeline-year">2021</div>
+
+          <div class="timeline-content">
+            <h3>Primeros contenidos</h3>
+            <p>
+              Aproximadamente desde 2021 comencé a crear contenido,
+              principalmente para YouTube.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <div class="timeline-year">HOY</div>
+
+          <div class="timeline-content">
+            <h3>Contenido y proyectos</h3>
+            <p>
+              Actualmente SoyEnriix reúne videos, entretenimiento y streaming,
+              mientras que Enriix Beatz abre una parte musical del proyecto.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIDEOS -->
+    <section class="section videos-section" id="videos">
+
+      <div class="videos-header reveal">
+
+        <div>
+          <div class="eyebrow">02 / YouTube</div>
+
+          <h2 class="section-title">
+            MIS<br>
+            <span class="accent">VIDEOS</span>
+          </h2>
+        </div>
+
+        <p>
+          Algunos de los videos que forman parte de mi canal de YouTube.
+        </p>
+
+      </div>
+
+
+      <div class="videos-grid">
+
+        <article class="video-card reveal">
+          <iframe
+            src="https://www.youtube.com/embed/22s0QVlTjjk"
+            title="Video de SoyEnriix"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </article>
+
+
+        <article class="video-card reveal">
+          <iframe
+            src="https://www.youtube.com/embed/y2FU1mB1Nr4"
+            title="Video de SoyEnriix"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </article>
+
+
+        <article class="video-card reveal" style="grid-column: 1 / -1;">
+
+          <div class="video-placeholder">
+
+            <div class="number">03</div>
+
+            <h3>Próximo video</h3>
+
+            <p>
+              Espacio preparado para agregar el tercer video.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <a
+        class="channel-link"
+        href="https://www.youtube.com/@SoyEnriix"
+        target="_blank"
+        rel="noopener">
+        Abrir canal de YouTube →
+      </a>
+
+    </section>
+
+
+    <!-- MUSIC -->
+    <div class="music-wrap" id="enriix-beatz">
+
+      <div class="music-intro">
+
+        <div class="eyebrow reveal" style="color: var(--red);">
+          03 / Proyecto musical
+        </div>
+
+        <h2 class="music-title reveal">
+          ENRIIX<br>
+          <span class="red">BEATZ</span>
+        </h2>
+
+        <p class="music-description reveal">
+          Enriix Beatz es mi proyecto musical, que estoy empezando actualmente.
+          Por ahora, la canción que quiero presentar aquí es
+          <strong>MEA GUATA</strong>.
+        </p>
+
+        <a
+          class="music-link reveal"
+          href="https://www.youtube.com/@EnriixBeatz"
+          target="_blank"
+          rel="noopener">
+          YouTube · Enriix Beatz →
+        </a>
+
+      </div>
+
+
+      <!-- SONG -->
+      <section class="song-section" id="mea-guata">
+
+        <div class="song-card reveal">
+
+          <div class="cover-wrap">
+
+            <img
+              class="cover"
+              src="images/mea-guata-cover.jpg"
+              alt="Portada de MEA GUATA - Enriix Beatz"
+              loading="lazy">
+
+            <div class="cover-glass"></div>
+
+          </div>
+
+
+          <div>
+
+            <div class="song-label">
+              Enriix Beatz / Single
+            </div>
+
+            <h3 class="song-title">
+              MEA<br>
+              <span style="color: var(--red);">GUATA</span>
+            </h3>
+
+            <p class="song-subtitle">
+              Una canción de Enriix Beatz hecha como parte del proyecto musical.
+            </p>
+
+
+            <!-- AUDIO -->
+            <div class="audio-player">
+
+              <div class="audio-top">
+
+                <span class="audio-title">
+                  ▶ MEA GUATA
+                </span>
+
+                <span class="audio-status">
+                  AUDIO
+                </span>
+
+              </div>
+
+              <!--
+                CUANDO SUBAS EL AUDIO A GITHUB,
+                CAMBIA "audio/mea-guata.mp3" POR LA RUTA REAL.
+              -->
+
+              <audio controls preload="metadata">
+                <source src="audio/mea-guata.mp3" type="audio/mpeg">
+                Tu navegador no soporta el reproductor de audio.
+              </audio>
+
+              <p class="audio-note">
+                Para activar el reproductor, sube el archivo MP3 a la carpeta
+                "audio" del repositorio y déjalo con el nombre
+                "mea-guata.mp3".
+              </p>
+
+            </div>
+
+
+            <!-- PLATFORMS -->
+            <div class="platforms">
+
+              <a
+                class="platform youtube"
+                href="https://www.youtube.com/@EnriixBeatz"
+                target="_blank"
+                rel="noopener">
+                YouTube
+              </a>
+
+              <span class="platform">
+                Spotify
+              </span>
+
+              <span class="platform">
+                Apple Music
+              </span>
+
+              <span class="platform">
+                Amazon Music
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- LYRICS -->
+        <div class="lyrics">
+
+          <div class="reveal">
+
+            <div class="eyebrow" style="color: var(--red);">
+              Letra
+            </div>
+
+            <h3 class="lyrics-title">
+              MEA<br>
+              <span>GUATA</span>
+            </h3>
+
+          </div>
+
+
+          <div class="lyrics-content reveal">
+
+            <p class="lyrics-placeholder">
+              La letra completa de MEA GUATA irá aquí.
+
+              Este espacio está preparado para colocar la letra original de
+              la canción cuando se agregue al sitio.
+
+              No se ha generado ni inventado ninguna parte de la letra.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div>
+      <span class="footer-name">SOYENRIIX</span>
+      <span> · Enrique Cerda Arias</span>
+    </div>
+
+    <div>
+      Santiago de Chile · Enriix Beatz
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      observer.observe(element);
+    });
+
+
+    /* =========================
+       CURSOR LIGHT
+    ========================= */
+
+    const cursorGlow = document.getElementById("cursorGlow");
+
+    window.addEventListener("mousemove", (event) => {
+      cursorGlow.style.left = event.clientX + "px";
+      cursorGlow.style.top = event.clientY + "px";
+    });
+
+
+    /* =========================
+       HERO PARALLAX
+    ========================= */
+
+    const orb = document.querySelector(".glass-orb");
+
+    window.addEventListener("mousemove", (event) => {
+
+      if (!orb || window.innerWidth < 700) return;
+
+      const x = (event.clientX / window.innerWidth - .5) * 18;
+      const y = (event.clientY / window.innerHeight - .5) * 18;
+
+      orb.style.transform =
+        `translate(${x}px, ${y}px) rotate(${x * .15}deg)`;
+    });
+
+
+    /* =========================
+       SMOOTH NAVIGATION
+    ========================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        const target = document.querySelector(
+          link.getAttribute("href")
+        );
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
