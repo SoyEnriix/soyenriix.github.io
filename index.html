@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SoyEnriix — Enrique Cerda Arias</title>
+
+  <meta
+    name="description"
+    content="SoyEnriix, nombre artístico de Enrique Cerda Arias, creador de contenido chileno de Santiago de Chile y creador del proyecto musical Enriix Beatz."
+  >
+
+  <meta
+    name="keywords"
+    content="SoyEnriix, Enriix, Enrique Cerda Arias, Enriix Beatz, MEA GUATA, creador chileno, YouTube, TikTok, Kick"
+  >
+
+  <meta name="author" content="Enrique Cerda Arias">
+
+  <meta property="og:title" content="SoyEnriix — Enrique Cerda Arias">
+  <meta
+    property="og:description"
+    content="Conoce a SoyEnriix y su proyecto musical Enriix Beatz."
+  >
+  <meta property="og:image" content="images/mea-guata-cover.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --black: #070707;
+      --black-soft: #101010;
+      --white: #f5f3ef;
+      --gray: #a4a4a4;
+      --line: rgba(255,255,255,.13);
+
+      --red: #e3262e;
+      --red-dark: #a80e15;
+
+      --music-bg: #f4f1eb;
+      --music-black: #111111;
+      --music-gray: #686868;
+      --music-line: rgba(0,0,0,.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: white;
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+
+    nav {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 25px 5vw;
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+
+      background: rgba(7,7,7,.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-logo {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 19px;
+      letter-spacing: -1px;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: #cfcfcf;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 145px 5vw 80px;
+
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: end;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "ENRIIX";
+      position: absolute;
+      top: 130px;
+      right: -80px;
+
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(120px, 24vw, 390px);
+      line-height: .7;
+
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin-bottom: 25px;
+
+      color: #aaa;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 45px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(85px, 13vw, 210px);
+      line-height: .78;
+      letter-spacing: -7px;
+      text-transform: uppercase;
+    }
+
+    .hero-title .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.45);
+    }
+
+    .hero-description {
+      max-width: 640px;
+
+      margin-top: 48px;
+
+      font-size: 18px;
+      line-height: 1.7;
+      color: #c7c7c7;
+    }
+
+    .hero-description strong {
+      color: white;
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 2;
+      align-self: center;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+
+      width: 100%;
+      aspect-ratio: 4 / 5;
+
+      background: #151515;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          transparent 40%,
+          rgba(227,38,46,.22)
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      filter: saturate(.85) contrast(1.08);
+      transition: transform 1s ease;
+    }
+
+    .hero-image-wrap:hover .hero-image {
+      transform: scale(1.04);
+    }
+
+    .hero-image-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      z-index: 5;
+
+      padding: 18px 20px;
+
+      background: white;
+      color: black;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 5vw;
+
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #777;
+    }
+
+    /* =========================
+       INTRO BAR
+    ========================= */
+
+    .intro-bar {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      padding: 22px 5vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #777;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .intro-bar strong {
+      color: white;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .section {
+      padding: 140px 5vw;
+    }
+
+    .section-number {
+      color: var(--red);
+
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+    }
+
+    .section-heading {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(55px, 8vw, 125px);
+      line-height: .85;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+
+    .about-grid {
+      margin-top: 90px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .about-main {
+      font-size: 25px;
+      line-height: 1.45;
+      color: #ddd;
+    }
+
+    .about-main strong {
+      color: white;
+    }
+
+    .about-side {
+      border-left: 1px solid var(--line);
+      padding-left: 40px;
+    }
+
+    .about-side p {
+      color: #999;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+
+      margin-top: 80px;
+
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .fact {
+      padding: 34px;
+      background: var(--black-soft);
+    }
+
+    .fact small {
+      display: block;
+      margin-bottom: 12px;
+
+      color: #666;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .fact strong {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       ANTECEDENTES
+    ========================= */
+
+    .antecedentes {
+      background: #0c0c0c;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .antecedentes-content {
+      max-width: 1000px;
+      margin-top: 65px;
+    }
+
+    .antecedentes-content p {
+      color: #b9b9b9;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .antecedentes-content p + p {
+      margin-top: 25px;
+    }
+
+    /* =========================
+       TRAJECTORY
+    ========================= */
+
+    .trajectory {
+      padding-bottom: 160px;
+    }
+
+    .trajectory-list {
+      margin-top: 80px;
+      border-top: 1px solid var(--line);
+    }
+
+    .trajectory-item {
+      display: grid;
+      grid-template-columns: 100px 1fr 1.2fr;
+
+      gap: 35px;
+
+      padding: 34px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      align-items: center;
+    }
+
+    .trajectory-number {
+      color: var(--red);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .trajectory-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .trajectory-description {
+      color: #858585;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       VIDEOS
+    ========================= */
+
+    .videos {
+      background: #111;
+      border-top: 1px solid var(--line);
+    }
+
+    .videos-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .videos-header p {
+      max-width: 420px;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .video-grid {
+      margin-top: 75px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .video-card {
+      background: #181818;
+      border: 1px solid #252525;
+
+      overflow: hidden;
+
+      transition: transform .3s, border-color .3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-7px);
+      border-color: #555;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .video-info {
+      padding: 25px;
+    }
+
+    .video-number {
+      color: var(--red);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    .video-info h3 {
+      margin-top: 10px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 19px;
+    }
+
+    .video-info p {
+      margin-top: 8px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music {
+      background: var(--music-bg);
+      color: var(--music-black);
+
+      padding: 150px 5vw;
+    }
+
+    .music .section-number {
+      color: var(--red-dark);
+    }
+
+    .music-heading {
+      font-family: "Archivo Black", sans-serif;
+
+      font-size: clamp(60px, 10vw, 160px);
+      line-height: .78;
+      letter-spacing: -6px;
+
+      text-transform: uppercase;
+    }
+
+    .music-heading .red {
+      color: var(--red);
+    }
+
+    .music-intro {
+      max-width: 780px;
+
+      margin-top: 60px;
+
+      font-size: 23px;
+      line-height: 1.55;
+      color: #454545;
+    }
+
+    .music-divider {
+      margin: 100px 0;
+
+      height: 1px;
+      background: var(--music-line);
+    }
+
+    .music-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .music-info h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .music-info p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .platform {
+      padding: 12px 18px;
+
+      border: 1px solid rgba(0,0,0,.2);
+
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MEA GUATA
+    ========================= */
+
+    .mea-guata {
+      margin-top: 130px;
+
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+
+      align-items: start;
+    }
+
+    .cover-container {
+      position: sticky;
+      top: 120px;
+    }
+
+    .cover-container img {
+      width: 100%;
+      display: block;
+
+      box-shadow:
+        25px 25px 0 var(--red),
+        0 30px 70px rgba(0,0,0,.2);
+    }
+
+    .cover-caption {
+      margin-top: 35px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #777;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .song-title {
+      font-family: "Archivo Black", sans-serif;
+
+      font-size: clamp(60px, 8vw, 130px);
+      line-height: .78;
+      letter-spacing: -5px;
+
+      text-transform: uppercase;
+    }
+
+    .song-title span {
+      color: var(--red);
+    }
+
+    .song-description {
+      margin-top: 35px;
+
+      color: #555;
+
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .song-meta {
+      margin-top: 45px;
+
+      display: flex;
+      gap: 50px;
+
+      border-top: 1px solid var(--music-line);
+      border-bottom: 1px solid var(--music-line);
+
+      padding: 20px 0;
+    }
+
+    .song-meta div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .song-meta small {
+      color: #999;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .song-meta strong {
+      font-size: 14px;
+    }
+
+    /* =========================
+       LYRICS
+    ========================= */
+
+    .lyrics {
+      margin-top: 100px;
+
+      border-top: 1px solid var(--music-line);
+
+      padding-top: 30px;
+    }
+
+    .lyrics-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 35px;
+    }
+
+    .lyrics-title h3 {
+      font-family: "Space Grotesk", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .lyrics-title span {
+      color: #999;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .lyrics-text {
+      font-size: 18px;
+      line-height: 2;
+
+      color: #303030;
+
+      white-space: pre-line;
+    }
+
+    .lyrics-text .hook {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+      min-height: 75vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 130px 5vw;
+
+      background: var(--black);
+      color: white;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final::before {
+      content: "ENRIIX";
+
+      position: absolute;
+      right: -100px;
+      bottom: -70px;
+
+      font-family: "Archivo Black", sans-serif;
+      font-size: 28vw;
+
+      color: rgba(255,255,255,.025);
+    }
+
+    .final-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .final-small {
+      color: var(--red);
+
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+
+      margin-bottom: 30px;
+    }
+
+    .final h2 {
+      max-width: 1000px;
+
+      font-family: "Archivo Black", sans-serif;
+
+      font-size: clamp(50px, 8vw, 125px);
+      line-height: .85;
+
+      letter-spacing: -5px;
+
+      text-transform: uppercase;
+    }
+
+    .final h2 span {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.5);
+    }
+
+    .final p {
+      margin-top: 40px;
+
+      max-width: 600px;
+
+      color: #858585;
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+
+      padding: 30px 5vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #666;
+
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-name {
+      color: white;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 130px;
+      }
+
+      .hero-side {
+        max-width: 600px;
+      }
+
+      .hero-title {
+        font-size: 18vw;
+      }
+
+      .about-grid,
+      .music-info-grid,
+      .mea-guata {
+        grid-template-columns: 1fr;
+      }
+
+      .about-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 40px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trajectory-item {
+        grid-template-columns: 60px 1fr;
+      }
+
+      .trajectory-description {
+        grid-column: 2;
+      }
+
+      .cover-container {
+        position: relative;
+        top: auto;
+        max-width: 600px;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .section,
+      .music {
+        padding: 90px 6vw;
+      }
+
+      .hero {
+        padding-left: 6vw;
+        padding-right: 6vw;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .about-main {
+        font-size: 20px;
+      }
+
+      .music-intro {
+        font-size: 19px;
+      }
+
+      .song-meta {
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .lyrics-text {
+        font-size: 16px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+    <a href="#inicio" class="nav-logo">
+      SOY<span>ENRIIX</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#quien-es">Quién es</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#videos">Videos</a>
+      <a href="#enriix-beatz">Enriix Beatz</a>
+      <a href="#mea-guata">MEA GUATA</a>
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero" id="inicio">
+
+    <div class="hero-left reveal">
+
+      <div class="eyebrow">
+        Santiago de Chile · Creador
+      </div>
+
+      <h1 class="hero-title">
+        SOY<br>
+        <span class="outline">ENRIIX</span>
+      </h1>
+
+      <p class="hero-description">
+        <strong>Enrique Cerda Arias</strong>, mejor conocido como
+        <strong>SoyEnriix</strong>, es un creador de contenido chileno
+        de Santiago de Chile. Actualmente tiene 15 años y desarrolla
+        contenido principalmente para YouTube, TikTok y Kick.
+        Su presencia en internet combina creación de contenido,
+        entretenimiento y una identidad propia que también se extiende
+        a la música mediante su proyecto <strong>Enriix Beatz</strong>.
+      </p>
+
+    </div>
+
+    <div class="hero-side reveal">
+
+      <div class="hero-image-wrap">
+
+        <img
+          src="images/mea-guata-cover.jpg"
+          alt="Portada de MEA GUATA de Enriix Beatz"
+          class="hero-image"
+        >
+
+        <div class="hero-image-label">
+          Enriix Beatz / MEA GUATA
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+      ↓ Explorar
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       INFO BAR
+  ========================= -->
+
+  <div class="intro-bar">
+    <span><strong>SOYENRIIX</strong> / ENRIQUE CERDA ARIAS</span>
+    <span>CREADOR · CHILE</span>
+  </div>
+
+
+  <!-- =========================
+       QUIÉN ES
+  ========================= -->
+
+  <section class="section" id="quien-es">
+
+    <div class="section-number">
+      01 / Quién es
+    </div>
+
+    <h2 class="section-heading reveal">
+      Una identidad<br>
+      detrás del nombre.
+    </h2>
+
+    <div class="about-grid">
+
+      <div class="about-main reveal">
+
+        SoyEnriix es el nombre con el que
+        <strong>Enrique Cerda Arias</strong>
+        se presenta públicamente en internet.
+
+        <br><br>
+
+        Desde Santiago de Chile desarrolla contenido
+        para distintas plataformas y utiliza el nombre
+        SoyEnriix como su identidad principal dentro
+        de sus proyectos digitales.
+
+      </div>
+
+      <div class="about-side reveal">
+
+        <p>
+          Su actividad se concentra principalmente en
+          <strong>YouTube, TikTok y Kick</strong>.
+          La creación de contenido es el centro de su
+          presencia online, mientras que la música aparece
+          como otro espacio creativo a través de Enriix Beatz.
+        </p>
+
+        <p>
+          Enriix Beatz es el proyecto musical asociado
+          a SoyEnriix. Actualmente el proyecto comienza
+          con <strong>MEA GUATA</strong>, una canción creada
+          desde una perspectiva de humor y entretenimiento.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="facts reveal">
+
+      <div class="fact">
+        <small>Nombre</small>
+        <strong>Enrique Cerda Arias</strong>
+      </div>
+
+      <div class="fact">
+        <small>Nombre artístico</small>
+        <strong>SoyEnriix</strong>
+      </div>
+
+      <div class="fact">
+        <small>Ciudad</small>
+        <strong>Santiago de Chile</strong>
+      </div>
+
+      <div class="fact">
+        <small>Edad actual</small>
+        <strong>15 años</strong>
+      </div>
+
+      <div class="fact">
+        <small>Contenido</small>
+        <strong>YouTube · TikTok · Kick</strong>
+      </div>
+
+      <div class="fact">
+        <small>Proyecto musical</small>
+        <strong>Enriix Beatz</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ANTECEDENTES
+  ========================= -->
+
+  <section class="section antecedentes">
+
+    <div class="section-number">
+      02 / Antecedentes
+    </div>
+
+    <h2 class="section-heading reveal">
+      De dónde<br>
+      viene el proyecto.
+    </h2>
+
+    <div class="antecedentes-content reveal">
+
+      <p>
+        La presencia de Enrique Cerda Arias en internet se
+        construye alrededor del nombre <strong>SoyEnriix</strong>.
+        El proyecto reúne sus publicaciones, videos,
+        transmisiones y diferentes ideas creativas bajo
+        una misma identidad.
+      </p>
+
+      <p>
+        Con el tiempo, esa identidad también comenzó a
+        trasladarse hacia la música mediante <strong>Enriix Beatz</strong>,
+        un proyecto separado dentro de la misma marca creativa.
+      </p>
+
+      <p>
+        Enriix Beatz no busca presentarse como algo completamente
+        ajeno a SoyEnriix: es otra forma en la que Enrique utiliza
+        internet para crear, experimentar con canciones y hacer
+        contenido musical desde el humor.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TRAYECTORIA
+  ========================= -->
+
+  <section class="section trajectory" id="trayectoria">
+
+    <div class="section-number">
+      03 / Trayectoria
+    </div>
+
+    <h2 class="section-heading reveal">
+      El proyecto<br>
+      en movimiento.
+    </h2>
+
+    <div class="trajectory-list">
+
+      <div class="trajectory-item reveal">
+
+        <div class="trajectory-number">01</div>
+
+        <div class="trajectory-title">
+          SoyEnriix
+        </div>
+
+        <div class="trajectory-description">
+          Nombre principal utilizado por Enrique Cerda Arias
+          para desarrollar su presencia y contenido en internet.
+        </div>
+
+      </div>
+
+
+      <div class="trajectory-item reveal">
+
+        <div class="trajectory-number">02</div>
+
+        <div class="trajectory-title">
+          Contenido
+        </div>
+
+        <div class="trajectory-description">
+          Publicaciones y transmisiones distribuidas principalmente
+          entre YouTube, TikTok y Kick.
+        </div>
+
+      </div>
+
+
+      <div class="trajectory-item reveal">
+
+        <div class="trajectory-number">03</div>
+
+        <div class="trajectory-title">
+          Enriix Beatz
+        </div>
+
+        <div class="trajectory-description">
+          Proyecto musical creado como una nueva extensión
+          de la identidad de Enriix.
+        </div>
+
+      </div>
+
+
+      <div class="trajectory-item reveal">
+
+        <div class="trajectory-number">04</div>
+
+        <div class="trajectory-title">
+          MEA GUATA
+        </div>
+
+        <div class="trajectory-description">
+          Primer lanzamiento presentado dentro del proyecto
+          Enriix Beatz.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       VIDEOS
+  ========================= -->
+
+  <section class="section videos" id="videos">
+
+    <div class="videos-header">
+
+      <div>
+        <div class="section-number">
+          04 / Videos
+        </div>
+
+        <h2 class="section-heading reveal">
+          Lo que<br>
+          hace.
+        </h2>
+      </div>
+
+      <p class="reveal">
+        Una selección de tres videos de SoyEnriix.
+        El contenido audiovisual forma parte central
+        de su presencia en internet.
+      </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+      <!-- VIDEO 1 -->
+
+      <article class="video-card reveal">
+
+        <iframe
+          class="video-frame"
+          src="https://www.youtube.com/embed/WU054jikiuA"
+          title="Video de SoyEnriix"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-info">
+          <div class="video-number">VIDEO 01</div>
+
+          <h3>SoyEnriix</h3>
+
+          <p>
+            Contenido publicado en su canal principal.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 2 -->
+
+      <article class="video-card reveal">
+
+        <iframe
+          class="video-frame"
+          src="https://www.youtube.com/embed/y2FU1mB1Nr4"
+          title="Video de SoyEnriix"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-info">
+          <div class="video-number">VIDEO 02</div>
+
+          <h3>SoyEnriix</h3>
+
+          <p>
+            Otro momento del contenido publicado por Enriix.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 3 -->
+
+      <article class="video-card reveal">
+
+        <iframe
+          class="video-frame"
+          src="https://www.youtube.com/embed/22s0QVlTjjk"
+          title="Video de SoyEnriix"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+        <div class="video-info">
+          <div class="video-number">VIDEO 03</div>
+
+          <h3>SoyEnriix</h3>
+
+          <p>
+            Tercer video seleccionado para el sitio.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ENRIIX BEATZ
+  ========================= -->
+
+  <section class="music" id="enriix-beatz">
+
+    <div class="section-number">
+      05 / Proyecto musical
+    </div>
+
+    <h2 class="music-heading reveal">
+      ENRIIX<br>
+      <span class="red">BEATZ</span>
+    </h2>
+
+    <p class="music-intro reveal">
+      Enriix Beatz es el proyecto musical de Enrique.
+      Es un espacio donde convierte ideas, bromas y
+      situaciones en canciones, buscando que el resultado
+      también funcione como una pieza musical.
+    </p>
+
+
+    <div class="music-divider"></div>
+
+
+    <div class="music-info-grid">
+
+      <div class="music-info reveal">
+
+        <h3>El proyecto</h3>
+
+        <p>
+          Actualmente Enriix Beatz comienza con
+          <strong>MEA GUATA</strong>, una canción de humor
+          que representa el lado más irreverente y entretenido
+          del proyecto.
+        </p>
+
+      </div>
+
+
+      <div class="music-info reveal">
+
+        <h3>Presencia musical</h3>
+
+        <p>
+          La música forma parte de la identidad de Enriix
+          y se presenta bajo un nombre propio:
+          <strong>Enriix Beatz</strong>.
+        </p>
+
+        <div class="platforms">
+          <span class="platform">Spotify</span>
+          <span class="platform">Apple Music</span>
+          <span class="platform">Amazon Music</span>
+          <span class="platform">YouTube</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MEA GUATA
+    ========================= -->
+
+    <div class="mea-guata" id="mea-guata">
+
+      <div class="cover-container reveal">
+
+        <img
+          src="images/mea-guata-cover.jpg"
+          alt="Portada oficial de MEA GUATA"
+        >
+
+        <div class="cover-caption">
+          <span>Enriix Beatz</span>
+          <span>01 / MEA GUATA</span>
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="section-number">
+          05.01 / Primer lanzamiento
+        </div>
+
+        <h3 class="song-title reveal">
+          MEA<br>
+          <span>GUATA</span>
+        </h3>
+
+        <p class="song-description reveal">
+          MEA GUATA es el primer tema presentado bajo
+          Enriix Beatz. La canción utiliza humor, exageración
+          y una idea absurda como base para construir
+          una pieza musical entretenida.
+        </p>
+
+
+        <div class="song-meta reveal">
+
+          <div>
+            <small>Artista</small>
+            <strong>Enriix Beatz</strong>
+          </div>
+
+          <div>
+            <small>Título</small>
+            <strong>MEA GUATA</strong>
+          </div>
+
+          <div>
+            <small>Proyecto</small>
+            <strong>Enriix Beatz</strong>
+          </div>
+
+        </div>
+
+
+        <!-- LETRA -->
+
+        <div class="lyrics reveal">
+
+          <div class="lyrics-title">
+            <h3>Letra</h3>
+            <span>MEA GUATA</span>
+          </div>
+
+          <div class="lyrics-text">
+
+<span class="hook">Oye, Tommy, tení’ la mea guata,
+es que cuando veo esa guata,
+de ti me enamoro fácil,
+es una guata abominante.</span>
+
+Esa guata ya está rugiendo,
+quiere un poco más de lo que yo toi’ comiendo.
+
+Quiero que me dejes ver tu ombligo,
+como un agujero negro, chupa todo.
+
+Solo quiero comida,
+no te comas esa paloma.
+
+Contigo me siento seguro,
+guata, eri como un gorila.
+
+Solo quiero comida,
+no te comas esa paloma.
+
+Contigo me siento seguro,
+guata, eri como un gorila.
+
+El corazón me late rápido,
+me comí 150 chocolates,
+yo no paro porque,
+eso es un clásico.
+
+24/7 comiendo y bebiendo,
+porque es como se debe.
+
+Seguiría noche y día comiendo,
+solamente para ver si yo crezco.
+
+Y yo pienso todo el día en ti
+y ver si puedo no comer.
+
+Podemos ir a comer,
+después de ver tu ombligo infinito,
+porque…
+
+<span class="hook">Oye, Tommy, tení’ la mea guata,
+es que cuando veo esa guata,
+de ti me enamoro fácil,
+es una guata abominante.</span>
+
+Esa guata ya está rugiendo,
+quiere un poco más de lo que yo toi’ comiendo.
+
+Quiero que me dejes ver tu ombligo,
+como un agujero negro, chupa todo.
+
+Solo quiero comida,
+no te comas esa paloma.
+
+Contigo me siento seguro,
+guata, eri como un gorila.
+
+Solo quiero comida,
+no te comas esa paloma.
+
+Contigo me siento seguro,
+guata, eri como un gorila.
+
+Estabai’ en el Mc comiendo una burger
+con el Tiaguito.
+
+JAJA.
+
+Perame, que yo también te caigo,
+que quiero un quesito.
+
+Si tú no quieres, dieta conmigo,
+vai a engordar como una pelota
+y vas a explotar.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL
+  ========================= -->
+
+  <section class="final">
+
+    <div class="final-content reveal">
+
+      <div class="final-small">
+        SoyEnriix
+      </div>
+
+      <h2>
+        ENRIQUE<br>
+        <span>CERDA ARIAS</span>
+      </h2>
+
+      <p>
+        SoyEnriix es la identidad digital de Enrique Cerda Arias:
+        creador de contenido de Santiago de Chile y creador
+        de Enriix Beatz.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-name">
+      SOYENRIIX
+    </div>
+
+    <div>
+      Enrique Cerda Arias · Santiago de Chile
+    </div>
+
+    <div>
+      Enriix Beatz
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* Animaciones al hacer scroll */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+    /* Cerrar menú / navegación suave */
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+      link.addEventListener("click", function(event) {
+
+        const target =
+          document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
