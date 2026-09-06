@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SoyEnriix — Enrique Cerda Araya</title>
+
+  <meta
+    name="description"
+    content="Enrique Cerda Araya, conocido como SoyEnriix, es un creador de contenido de Santiago de Chile y creador de Enriix Beatz."
+  >
+
+  <meta name="author" content="Enrique Cerda Araya">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="SoyEnriix — Enrique Cerda Araya">
+  <meta
+    property="og:description"
+    content="Página oficial de Enrique Cerda Araya, conocido como SoyEnriix."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/mea-guata-cover.jpg">
+
+  <style>
+
+    :root {
+      --red: #e53935;
+      --dark-red: #b71c1c;
+      --black: #101010;
+      --gray: #666;
+      --light: #f6f6f6;
+      --border: #e7e7e7;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.65;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 100px solid rgba(229,57,53,.045);
+      right: -230px;
+      top: 40px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(65px, 12vw, 145px);
+      line-height: .82;
+      letter-spacing: -8px;
+      font-weight: 950;
+      margin-bottom: 38px;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .hero-text {
+      max-width: 780px;
+      font-size: clamp(19px, 2.4vw, 26px);
+      line-height: 1.45;
+      color: #414141;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .button {
+      border: 1px solid #dcdcdc;
+      border-radius: 999px;
+      padding: 11px 19px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .button:hover {
+      color: var(--red);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-number {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: clamp(43px, 6vw, 78px);
+      line-height: .92;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 820px;
+      color: #555;
+      font-size: 20px;
+    }
+
+    /* ENRIQUE */
+
+    .personal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      margin-top: 60px;
+    }
+
+    .fact {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .fact-label {
+      display: block;
+      color: #777;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .fact-value {
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    /* SOYENRIIX */
+
+    .soyenriix {
+      background: var(--light);
+    }
+
+    .creator-text {
+      max-width: 830px;
+      font-size: 19px;
+      color: #444;
+    }
+
+    .creator-text p + p {
+      margin-top: 21px;
+    }
+
+    .platform-box {
+      margin-top: 55px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 38px;
+    }
+
+    .platform-box h3 {
+      font-size: 31px;
+      margin-bottom: 10px;
+    }
+
+    .platform-box p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    /* MUSIC */
+
+    .music-card {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 25px 75px rgba(0,0,0,.08);
+    }
+
+    .music-cover {
+      background: #111;
+    }
+
+    .music-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .music-info {
+      padding: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .music-label {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .music-info h3 {
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: .86;
+      letter-spacing: -5px;
+      margin-bottom: 27px;
+    }
+
+    .music-info p {
+      color: #555;
+      font-size: 18px;
+      max-width: 480px;
+    }
+
+    /* SOCIAL */
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 55px;
+    }
+
+    .social {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 19px;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .social small {
+      display: block;
+      color: #888;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .social:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 45px 0;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #111;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      h1 {
+        letter-spacing: -5px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .personal-grid,
+      .music-card {
+        grid-template-columns: 1fr;
+      }
+
+      .music-info {
+        padding: 42px 30px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- NAV -->
+
+<header>
+
+  <div class="container">
+
+    <nav>
+
+      <a href="#inicio" class="logo">
+        SOY<span>ENRIIX</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#enrique">
+          Enrique
+        </a>
+
+        <a href="#soyenriix">
+          SoyEnriix
+        </a>
+
+        <a href="#musica">
+          Enriix Beatz
+        </a>
+
+        <a href="#redes">
+          Redes
+        </a>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Enrique Cerda Araya · Santiago de Chile
+      </div>
+
+      <h1>
+        SOY<span>ENRIIX</span>
+      </h1>
+
+      <p class="hero-text">
+        Enrique Cerda Araya, conocido como SoyEnriix,
+        es un creador de contenido de Santiago de Chile.
+        Comenzó a crear contenido alrededor de 2021 y
+        actualmente también desarrolla su proyecto musical
+        bajo el nombre de Enriix Beatz.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#enrique" class="button">
+          Enrique
+        </a>
+
+        <a href="#soyenriix" class="button">
+          SoyEnriix
+        </a>
+
+        <a href="#musica" class="button">
+          Enriix Beatz
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ENRIQUE -->
+
+<section id="enrique">
+
+  <div class="container">
+
+    <div class="section-number">
+      01 · Enrique
+    </div>
+
+    <h2>
+      Enrique<br>
+      Cerda Araya.
+    </h2>
+
+    <p class="intro">
+      Enrique Cerda Araya, mejor conocido como SoyEnriix,
+      vive en Santiago de Chile. Actualmente tiene 15 años
+      y comenzó a crear contenido alrededor de 2021.
+    </p>
+
+
+    <div class="personal-grid">
+
+
+      <div>
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Nombre completo
+          </span>
+
+          <span class="fact-value">
+            Enrique Cerda Araya
+          </span>
+
+        </div>
+
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Nombre en internet
+          </span>
+
+          <span class="fact-value">
+            SoyEnriix
+          </span>
+
+        </div>
+
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Ciudad
+          </span>
+
+          <span class="fact-value">
+            Santiago de Chile
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Fecha de nacimiento
+          </span>
+
+          <span class="fact-value">
+            8 de septiembre de 2011
+          </span>
+
+        </div>
+
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Edad
+          </span>
+
+          <span class="fact-value">
+            15 años
+          </span>
+
+        </div>
+
+
+        <div class="fact">
+
+          <span class="fact-label">
+            Proyecto musical
+          </span>
+
+          <span class="fact-value">
+            Enriix Beatz
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SOYENRIIX -->
+
+<section class="soyenriix" id="soyenriix">
+
+  <div class="container">
+
+    <div class="section-number">
+      02 · SoyEnriix
+    </div>
+
+    <h2>
+      SoyEnriix.
+    </h2>
+
+
+    <div class="creator-text">
+
+      <p>
+        <strong>SoyEnriix</strong> es el nombre con el que
+        Enrique Cerda Araya se presenta en internet.
+        Comenzó a crear contenido alrededor de 2021,
+        principalmente a través de YouTube.
+      </p>
+
+      <p>
+        Actualmente también está presente en
+        <strong>TikTok y Kick</strong>, además de YouTube,
+        desarrollando contenido de videojuegos,
+        entretenimiento y streaming.
+      </p>
+
+      <p>
+        Entre los videojuegos que forman parte de su contenido
+        se encuentran <strong>Minecraft y Fortnite</strong>.
+        También ha trabajado en ideas relacionadas con
+        servidores, comunidades y proyectos de Minecraft,
+        como <strong>Carry Planet</strong>.
+      </p>
+
+      <p>
+        La identidad SoyEnriix reúne actualmente su contenido,
+        sus videos, sus transmisiones y su presencia en redes.
+      </p>
+
+    </div>
+
+
+    <div class="platform-box">
+
+      <h3>
+        YouTube
+      </h3>
+
+      <p>
+        YouTube fue el punto de partida de SoyEnriix
+        como creador de contenido alrededor de 2021.
+      </p>
+
+      <a
+        href="https://www.youtube.com/@EnriixBeatz"
+        target="_blank"
+        class="button"
+      >
+        Visitar YouTube →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ENRIIX BEATZ -->
+
+<section id="musica">
+
+  <div class="container">
+
+    <div class="section-number">
+      03 · Enriix Beatz
+    </div>
+
+    <h2>
+      Enriix<br>
+      Beatz.
+    </h2>
+
+    <p class="intro">
+      Enriix Beatz es el proyecto musical de Enrique.
+      Actualmente se encuentra comenzando este proyecto
+      y cuenta con una canción: <strong>MEA GUATA</strong>.
+    </p>
+
+
+    <div class="music-card">
+
+
+      <div class="music-cover">
+
+        <img
+          src="images/mea-guata-cover.jpg"
+          alt="Portada de MEA GUATA de Enriix Beatz"
+        >
+
+      </div>
+
+
+      <div class="music-info">
+
+        <div class="music-label">
+          Enriix Beatz · Single
+        </div>
+
+        <h3>
+          MEA<br>
+          GUATA
+        </h3>
+
+        <p>
+          <strong>MEA GUATA</strong> es actualmente
+          la primera y única canción del proyecto
+          musical de Enriix Beatz.
+        </p>
+
+        <p style="margin-top:18px;">
+          La identidad visual del proyecto está marcada
+          por el blanco y el rojo, tomando como referencia
+          la estética de la portada de MEA GUATA.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REDES -->
+
+<section id="redes">
+
+  <div class="container">
+
+    <div class="section-number">
+      04 · Redes
+    </div>
+
+    <h2>
+      Encuentra<br>
+      a Enriix.
+    </h2>
+
+
+    <div class="social-grid">
+
+
+      <a
+        class="social"
+        href="https://www.youtube.com/@EnriixBeatz"
+        target="_blank"
+        rel="noopener"
+      >
+
+        YouTube
+
+        <small>
+          Enriix Beatz
+        </small>
+
+      </a>
+
+
+      <a
+        class="social"
+        href="https://www.tiktok.com/@soyenriix"
+        target="_blank"
+        rel="noopener"
+      >
+
+        TikTok
+
+        <small>
+          @soyenriix
+        </small>
+
+      </a>
+
+
+      <a
+        class="social"
+        href="https://kick.com/soyenriix"
+        target="_blank"
+        rel="noopener"
+      >
+
+        Kick
+
+        <small>
+          SoyEnriix
+        </small>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <strong>SOYENRIIX</strong>
+    · Enrique Cerda Araya
+    · Santiago de Chile
+
+    <br><br>
+
+    Página oficial de SoyEnriix y Enriix Beatz.
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
